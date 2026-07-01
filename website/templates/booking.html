@@ -1,0 +1,547 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Your Inquiry Call | Neil Graham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #000000;
+    --white: #ffffff;
+    --gold: #cbb26b;
+    --gold-dim: rgba(203,178,107,0.14);
+    --gold-line: rgba(203,178,107,0.36);
+    --soft-white: rgba(255,255,255,0.68);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --nav-h: 96px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--sans);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: var(--nav-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.94), rgba(0,0,0,0.58), transparent);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+
+  .nav-logo svg { width: 40px; height: 40px; flex-shrink: 0; }
+
+  .nav-logo-text { display: flex; flex-direction: column; white-space: nowrap; }
+
+  .nav-logo-text span:first-child {
+    font-family: var(--serif);
+    font-size: 15px;
+    letter-spacing: 0.25em;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  .nav-logo-text span:last-child {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+    padding: 0 30px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.3s;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-book a {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 10px 20px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    white-space: nowrap;
+  }
+
+  .nav-book a:hover { background: var(--gold); color: var(--black); }
+
+  .booking-hero {
+    min-height: 100vh;
+    padding: 180px 80px 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .booking-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 58% 45% at 50% 38%, rgba(203,178,107,0.14), transparent 68%),
+      linear-gradient(to bottom, rgba(0,0,0,0.15), #000 92%);
+  }
+
+  .booking-hero::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 70px;
+    width: 1px;
+    height: 86px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    opacity: 0.7;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  h1, h2, h3, blockquote {
+    font-family: var(--serif);
+    font-weight: 300;
+  }
+
+  h1 {
+    font-size: clamp(54px, 9vw, 116px);
+    line-height: 0.92;
+    margin-bottom: 30px;
+  }
+
+  h1 em { color: var(--gold); font-style: italic; }
+
+  .hero-inner p {
+    max-width: 650px;
+    margin: 0 auto 42px;
+    color: var(--soft-white);
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  .btn-gold {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 15px 40px;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.4s, color 0.4s, transform 0.4s;
+  }
+
+  .btn-gold:hover {
+    background: var(--gold);
+    color: var(--black);
+    transform: translateY(-2px);
+  }
+
+  section { padding: 120px 80px; }
+
+  .intro {
+    max-width: 940px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: clamp(36px, 5vw, 66px);
+    line-height: 1.08;
+  }
+
+  .intro p,
+  .calendar-copy,
+  .closing-copy p {
+    color: rgba(255,255,255,0.64);
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  .intro p {
+    max-width: 720px;
+    margin: 26px auto 0;
+  }
+
+  .talk-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 72px;
+  }
+
+  .talk-card {
+    min-height: 285px;
+    border: 1px solid var(--gold-line);
+    background: #050505;
+    padding: 54px 38px;
+    transition: background 0.45s ease, transform 0.45s ease;
+  }
+
+  .talk-card:hover {
+    background: var(--gold-dim);
+    transform: translateY(-7px);
+  }
+
+  .talk-num {
+    display: block;
+    font-family: var(--serif);
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    margin-bottom: 22px;
+  }
+
+  .talk-card h3 {
+    font-size: 29px;
+    margin-bottom: 16px;
+  }
+
+  .talk-card p {
+    color: rgba(255,255,255,0.56);
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .calendar-section {
+    background: #050505;
+    border-top: 1px solid var(--gold-line);
+    border-bottom: 1px solid var(--gold-line);
+  }
+
+  .calendar-wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .calendar-copy {
+    max-width: 640px;
+    margin: 24px auto 50px;
+  }
+
+  .calendar-box {
+    min-height: 720px;
+    border: 1px solid var(--gold-line);
+    background:
+      radial-gradient(ellipse at center, rgba(203,178,107,0.08), transparent 60%),
+      #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    overflow: hidden;
+  }
+
+  .calendar-placeholder {
+    max-width: 520px;
+  }
+
+  .calendar-placeholder h3 {
+    font-size: 34px;
+    margin-bottom: 16px;
+    color: var(--gold);
+  }
+
+  .calendar-placeholder p {
+    color: rgba(255,255,255,0.58);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .embed-note {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 18px;
+    border: 1px solid rgba(203,178,107,0.26);
+    color: rgba(255,255,255,0.48);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .closing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: center;
+  }
+
+  .closing-quote blockquote {
+    font-size: clamp(30px, 4.2vw, 54px);
+    font-style: italic;
+    line-height: 1.22;
+    margin-bottom: 30px;
+  }
+
+  .closing-copy p { margin-bottom: 20px; }
+
+  .signature {
+    margin-top: 28px;
+    font-family: var(--serif);
+    font-size: 25px;
+    color: var(--gold);
+  }
+
+  .closing-panel {
+    min-height: 550px;
+    border: 1px solid var(--gold-line);
+    background:
+      linear-gradient(to top, rgba(0,0,0,0.72), transparent 60%),
+      radial-gradient(ellipse at center, rgba(203,178,107,0.12), transparent 65%),
+      #050505;
+    display: flex;
+    align-items: flex-end;
+    padding: 44px;
+  }
+
+  .closing-panel span {
+    display: block;
+    font-family: var(--serif);
+    font-size: 34px;
+    line-height: 1.2;
+    color: rgba(255,255,255,0.86);
+  }
+
+  footer {
+    border-top: 1px solid rgba(203,178,107,0.22);
+    padding: 58px 80px 38px;
+    text-align: center;
+  }
+
+  .footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .footer-nav a {
+    color: rgba(255,255,255,0.44);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-nav a:hover { color: var(--gold); }
+
+  .footer-copy {
+    color: rgba(255,255,255,0.24);
+    font-size: 11px;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(46px);
+    transition: opacity 1.15s cubic-bezier(0.16,0.7,0.2,1), transform 1.15s cubic-bezier(0.16,0.7,0.2,1);
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 1100px) {
+    .nav-links { display: none; }
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 26px; }
+    section { padding: 92px 28px; }
+    .booking-hero { padding: 160px 28px 105px; }
+    .talk-grid, .closing { grid-template-columns: 1fr; }
+    .calendar-box { min-height: 620px; }
+    .closing-panel { min-height: 390px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="40" y="6" width="38" height="38" rx="1" transform="rotate(45 40 6)" stroke="#cbb26b" stroke-width="1.5"/>
+      <rect x="40" y="14" width="28" height="28" rx="1" transform="rotate(45 40 14)" stroke="#cbb26b" stroke-width="1.2"/>
+      <rect x="40" y="22" width="18" height="18" rx="1" transform="rotate(45 40 22)" stroke="#cbb26b" stroke-width="1"/>
+      <rect x="40" y="30" width="9" height="9" rx="0.5" transform="rotate(45 40 30)" stroke="#cbb26b" stroke-width="0.8"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span>NEIL GRAHAM</span>
+      <span>Portrait Photographer</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Portraits</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Journal</a></li>
+    <li><a href="#">Model Calls</a></li>
+  </ul>
+
+  <div class="nav-book">
+    <a href="#calendar">Book Your Inquiry Call</a>
+  </div>
+</nav>
+
+<header class="booking-hero">
+  <div class="hero-inner reveal">
+    <span class="eyebrow">Complimentary Consultation</span>
+    <h1>Book Your<br><em>Inquiry Call</em></h1>
+    <p>Every portrait begins with a conversation. This complimentary call is where we talk about your vision, answer your questions, and discover whether this experience is the right fit.</p>
+    <a href="#calendar" class="btn-gold">Begin Your Experience</a>
+  </div>
+</header>
+
+<section>
+  <div class="intro reveal">
+    <span class="eyebrow">Before the Camera</span>
+    <h2>A relaxed conversation before anything is planned.</h2>
+    <p>This is not a rushed sales call. It is a thoughtful first step into the portrait experience. We will talk about what brought you here, what you want to preserve, and how your final artwork could live in your home for years to come.</p>
+  </div>
+
+  <div class="talk-grid reveal">
+    <div class="talk-card">
+      <span class="talk-num">I</span>
+      <h3>Your Story</h3>
+      <p>We will talk about what inspired you to reach out and what this portrait experience means to you.</p>
+    </div>
+
+    <div class="talk-card">
+      <span class="talk-num">II</span>
+      <h3>The Experience</h3>
+      <p>Neil will walk you through the process, from planning and wardrobe to the portrait session and reveal.</p>
+    </div>
+
+    <div class="talk-card">
+      <span class="talk-num">III</span>
+      <h3>The Investment</h3>
+      <p>You will learn about collections, finished artwork, and what to expect before deciding to move forward.</p>
+    </div>
+  </div>
+</section>
+
+<section class="calendar-section" id="calendar">
+  <div class="calendar-wrap reveal">
+    <span class="eyebrow">Choose Your Time</span>
+    <h2>Select a time that works for you.</h2>
+    <p class="calendar-copy">Once your call is booked, you will receive a confirmation email with the meeting details. Neil will also receive the scheduled inquiry in his calendar.</p>
+
+    <div class="calendar-box">
+      <div class="calendar-placeholder">
+        <h3>Calendly / Cal.com Embed Goes Here</h3>
+        <p>Replace this placeholder with Neil's Calendly or Cal.com embed code when the booking link is ready.</p>
+        <span class="embed-note">Connected calendar booking area</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="closing-quote reveal">
+    <span class="eyebrow">The Beginning</span>
+    <blockquote>“The inquiry call is not about booking a photoshoot. It is about discovering whether we are the right fit to create something meaningful together.”</blockquote>
+    <div class="signature">— Neil Graham</div>
+  </div>
+
+  <div class="closing-copy reveal">
+    <p>If we decide to move forward, Neil will guide you through every detail — from planning your session to designing finished artwork that feels personal, timeless, and worthy of being displayed.</p>
+    <p>This is where your portrait experience begins.</p>
+    <a class="btn-gold" href="/">Return Home</a>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="closing-panel reveal">
+    <span>A thoughtful first conversation. A timeless portrait experience.</span>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-nav">
+    <a href="/">Home</a>
+    <a href="#">About</a>
+    <a href="#">Portraits</a>
+    <a href="#">Services</a>
+    <a href="#">Journal</a>
+    <a href="#">Model Calls</a>
+    <a href="#calendar">Book Your Inquiry Call</a>
+  </div>
+  <p class="footer-copy">© 2026 Neil Graham Portrait Photography. All rights reserved.</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
