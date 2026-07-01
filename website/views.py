@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 def home(request):
-    return render(request, "index.html")
+    return render(request, "homepage.html")
 
 
 def booking(request):
