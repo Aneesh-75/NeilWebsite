@@ -1,149 +1,134 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Neil Graham | Fine Art Portrait Experiences{% endblock %}
+{% block title %}Neil Graham | Fine Art Portraiture{% endblock %}
+{% block description %}A cinematic fine art portrait experience by Neil Graham, crafted slowly and intentionally for legacy artwork.{% endblock %}
 
 {% block content %}
-<section class="hero page-section flush-top">
-  <div class="hero-media" data-parallax data-speed="0.12">
-    <img src="{% static 'images/neil_hero.jpg' %}" alt="A cinematic fine art portrait scene in warm gallery light">
-  </div>
-  <div class="hero-shade"></div>
-  <div class="section-inner hero-inner">
-    <p class="eyebrow">Waterford, Ontario · Fine Art Portrait Experiences</p>
-    <h1>Legacy portraits made to feel like an experience.</h1>
-    <p class="hero-copy">A portrait session with Neil is designed to feel slow, personal, and elevated: a chance to be pampered, guided, and seen before the finished artwork ever reaches your walls.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="{% url 'booking' %}">Book Your Inquiry Call</a>
-      <a class="btn btn-quiet" href="#portraits">View Portraits</a>
+<section class="hero-split">
+  <span class="outline-word">Artistry</span>
+  <div class="section-inner hero-grid">
+    <div class="hero-text reveal visible">
+      <p class="eyebrow">Established in Stillness</p>
+      <h1>Legacy in Every <em>Frame</em></h1>
+      <p class="hero-copy">Bespoke portraiture that transcends the temporary. An unhurried experience, captured with intention and crafted for generations.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#portraits">View the Portfolio</a>
+        <a class="btn btn-quiet" href="{% url 'booking' %}">Book Your Inquiry Call</a>
+      </div>
+    </div>
+    <div class="hero-photo reveal visible">
+      <img src="{% static 'images/bundle/asset08-9383814c.jpg' %}" alt="Fine art portrait in cinematic studio light">
     </div>
   </div>
   <div class="scroll-note" aria-hidden="true">Scroll</div>
 </section>
 
-<section class="marquee" aria-label="Brand values">
-  <div>
-    <span>Velvet</span><span>Legacy</span><span>Elegant</span><span>Cinematic</span><span>Intentional</span><span>Timeless</span><span>Personal</span>
-    <span>Velvet</span><span>Legacy</span><span>Elegant</span><span>Cinematic</span><span>Intentional</span><span>Timeless</span><span>Personal</span>
-  </div>
-</section>
-
 <section class="page-section" id="about">
-  <div class="section-inner split about-split reveal">
+  <div class="section-inner split reveal">
     <div class="portrait-frame">
-      <img src="{% static 'images/neil_portrait.jpg' %}" alt="Editorial portrait artwork placeholder">
+      <img src="{% static 'images/bundle/g2-5b2ee162.jpg' %}" alt="Portrait session artwork">
     </div>
     <div class="copy-stack">
-      <p class="eyebrow">The Artist Behind the Portraits</p>
-      <h2>Not just a photo session. A calm, intentional portrait day.</h2>
-      <p>Neil Graham creates fine art portrait experiences for people who want more than digital files. The process is built around conversation, relaxed direction, and finished artwork that feels worthy of being displayed.</p>
-      <p>From the first inquiry call to the final reveal, the goal is to make clients feel cared for, unhurried, and proud of the legacy they are preserving.</p>
-      <blockquote class="pull-quote">This is not just photography. It is your story, preserved with care.</blockquote>
+      <p class="eyebrow">The Philosophy</p>
+      <h2>The Art of <em>Slow</em> Photography</h2>
+      <p>In an age of instant gratification, the experience is deliberate. Sessions are not rushed appointments; they are curated, quiet, and designed to peel back the layers of the everyday.</p>
+      <p>Neil invites clients into stillness. Between the clicks of the shutter, the portrait begins to hold the quiet weight of legacy.</p>
+      <blockquote class="pull-quote">The print is the performance; the digital file is only the score.</blockquote>
     </div>
-  </div>
-</section>
-
-<section class="testimonial-band reveal">
-  <div class="section-inner narrow">
-    <p class="stars" aria-label="Five star review">★★★★★</p>
-    <blockquote>Working with Neil was unlike anything I expected. The entire experience felt relaxed and elevated, and the portraits are now the artwork I am proudest to have in my home.</blockquote>
-    <cite>Sarah M. · Google Review</cite>
-  </div>
-</section>
-
-<section class="page-section" id="portraits">
-  <div class="section-inner section-heading reveal">
-    <p class="eyebrow">Selected Work</p>
-    <h2>Portraits that feel cinematic, emotional, and permanent.</h2>
-  </div>
-  <div class="gallery-grid reveal">
-    <figure class="gallery-item gallery-large">
-      <img src="{% static 'images/neil_hero.jpg' %}" alt="Legacy portrait artwork placeholder">
-      <figcaption>Legacy Portraits</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="{% static 'images/neil_portrait.jpg' %}" alt="Fine art portrait artwork placeholder">
-      <figcaption>Fine Art Portraits</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="{% static 'images/neil_studio.jpg' %}" alt="Cinematic studio portrait artwork placeholder">
-      <figcaption>Studio Direction</figcaption>
-    </figure>
-    <figure class="gallery-item gallery-wide">
-      <img src="{% static 'images/neil_studio.jpg' %}" alt="Warm gallery style portrait artwork placeholder">
-      <figcaption>Finished Artwork</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="page-section services-section" id="services">
-  <div class="section-inner section-heading reveal">
-    <p class="eyebrow">Services</p>
-    <h2>Choose the portrait experience that fits the story.</h2>
-  </div>
-  <div class="section-inner services-grid reveal">
-    <article class="service-card" id="legacy">
-      <span>I</span>
-      <h3>Legacy</h3>
-      <p>Fine art portraits designed for personal history, family memory, and heirloom wall artwork.</p>
-    </article>
-    <article class="service-card" id="celebration">
-      <span>II</span>
-      <h3>Celebration of Life</h3>
-      <p>Thoughtful sessions for honoring a life chapter with dignity, warmth, and intention.</p>
-    </article>
-    <article class="service-card" id="headshots">
-      <span>III</span>
-      <h3>Headshots</h3>
-      <p>Professional portraits with refined lighting and presence, made for people who want polish without stiffness.</p>
-    </article>
-    <article class="service-card" id="dogs">
-      <span>IV</span>
-      <h3>Dogs</h3>
-      <p>Artful companion portraits that preserve personality, expression, and the bond clients never want to lose.</p>
-    </article>
   </div>
 </section>
 
 <section class="page-section story-section">
   <div class="section-inner split reverse reveal">
     <div class="copy-stack">
-      <p class="eyebrow">The Experience</p>
-      <h2>Planned like a gallery piece. Felt like a day to breathe.</h2>
-      <p>The strongest portraits rarely happen in a rushed room. Neil's process gives each client time to settle in, be guided, and enjoy the transformation from planning to portrait creation.</p>
-      <p>The finished result is not a folder of images. It is artwork selected with care and created to live with you.</p>
+      <p class="eyebrow">Printed to Last</p>
+      <h2>Artwork you can hold, frame, and hand down.</h2>
+      <p>In a world of fleeting pixels, the physical print remains the clearest expression of the portrait. It becomes history you can live with: tangible, archival, and designed to outlast the devices that display it.</p>
     </div>
-    <div class="image-panel" data-parallax data-speed="0.08">
-      <img src="{% static 'images/neil_studio.jpg' %}" alt="Gallery inspired studio atmosphere">
+    <div class="image-panel">
+      <img src="{% static 'images/bundle/asset01-85025364.jpg' %}" alt="Printed portrait artwork detail">
     </div>
   </div>
 </section>
 
-<section class="testimonial-pair page-section reveal">
-  <div class="section-inner two-quotes">
-    <blockquote>
-      <p class="stars">★★★★★</p>
-      <span>Neil made me feel comfortable immediately. I came in nervous and left feeling like I had been treated to a full experience.</span>
-      <cite>Melissa R. · Google Review</cite>
-    </blockquote>
-    <blockquote>
-      <p class="stars">★★★★★</p>
-      <span>The artwork is beautiful, but what surprised me most was how personal and meaningful the process felt.</span>
-      <cite>David K. · Google Review</cite>
-    </blockquote>
-  </div>
-</section>
-
-<section class="page-section process-section">
+<section class="page-section" id="portraits">
   <div class="section-inner section-heading reveal">
-    <p class="eyebrow">Process</p>
-    <h2>A guided path from inquiry to finished artwork.</h2>
+    <p class="eyebrow">Galleries</p>
+    <h2>Selected Works</h2>
+    <p class="section-kicker">Exploring identity through cinematic lighting and timeless composition.</p>
   </div>
-  <div class="section-inner process-grid reveal">
-    <article><span>01</span><h3>Inquiry Call</h3><p>Start with a conversation about goals, comfort level, timeline, and artwork.</p></article>
-    <article><span>02</span><h3>Planning</h3><p>Shape wardrobe, mood, styling, and the feeling the portraits should carry.</p></article>
-    <article><span>03</span><h3>Portrait Day</h3><p>Arrive to a calm, directed session that leaves room for personality.</p></article>
-    <article><span>04</span><h3>Reveal</h3><p>Select the pieces that will become prints, wall art, or heirloom albums.</p></article>
+  <div class="works reveal">
+    <article class="work-item">
+      <div class="frame">
+        <img src="{% static 'images/bundle/g6-02b6505a.jpg' %}" alt="Legacy portrait">
+      </div>
+      <h3>Legacy</h3>
+      <p>Generational Portraits</p>
+    </article>
+    <article class="work-item up">
+      <div class="frame">
+        <img src="{% static 'images/bundle/g8-596f348c.jpg' %}" alt="Cinematic headshot">
+      </div>
+      <h3>Identity</h3>
+      <p>Cinematic Headshots</p>
+    </article>
+    <article class="work-item down">
+      <div class="frame">
+        <img src="{% static 'images/bundle/g4-77be67e8.jpg' %}" alt="Celebration of life portrait">
+      </div>
+      <h3>Milestones</h3>
+      <p>Celebration of Life</p>
+    </article>
+  </div>
+</section>
+
+<section class="page-section services-section" id="services">
+  <div class="section-inner section-heading reveal">
+    <p class="eyebrow">The Collections</p>
+    <h2>Crafted Experiences</h2>
+  </div>
+  <div class="section-inner svc-list reveal">
+    <article class="svc-row" id="legacy">
+      <span class="num">01</span>
+      <div>
+        <h3>Legacy</h3>
+        <p>Generational portraiture for families who want a defining image to anchor the years to come.</p>
+      </div>
+      <span class="tag">Signature</span>
+    </article>
+    <article class="svc-row" id="celebration">
+      <span class="num">02</span>
+      <div>
+        <h3>Celebration of Life</h3>
+        <p>Tender, dignified remembrance sessions that honor a life and gather a family in stillness.</p>
+      </div>
+      <span class="tag">By Invitation</span>
+    </article>
+    <article class="svc-row" id="headshots">
+      <span class="num">03</span>
+      <div>
+        <h3>Headshots</h3>
+        <p>Cinematic identity portraits for people whose face is part of their work: refined, never corporate.</p>
+      </div>
+      <span class="tag">Studio</span>
+    </article>
+    <article class="svc-row" id="dogs">
+      <span class="num">04</span>
+      <div>
+        <h3>Dogs</h3>
+        <p>The most loyal members of the family, photographed with the same patience and light as any portrait.</p>
+      </div>
+      <span class="tag">Companion</span>
+    </article>
+  </div>
+</section>
+
+<section class="testimonial-band reveal">
+  <div class="section-inner narrow">
+    <p class="stars" aria-label="Five star review">★★★★★</p>
+    <blockquote>Neil has a way of seeing the soul that few others possess. The final portrait is truly a legacy piece our family will treasure for generations.</blockquote>
+    <cite>Eleanor V. · Five Stars</cite>
   </div>
 </section>
 
@@ -170,10 +155,11 @@
 </section>
 
 <section class="page-section final-cta">
+  <span class="outline-word">Legacy</span>
   <div class="section-inner narrow reveal">
-    <p class="eyebrow">Begin</p>
-    <h2>Your portrait experience starts with a conversation.</h2>
-    <p>Book a complimentary inquiry call to talk through your vision and see if the experience is the right fit.</p>
+    <p class="eyebrow">By Appointment Only</p>
+    <h2>Begin your <em>legacy</em> session.</h2>
+    <p>Start with a quiet inquiry call and decide whether the experience is the right fit.</p>
     <a class="btn btn-primary" href="{% url 'booking' %}">Book Your Inquiry Call</a>
   </div>
 </section>
