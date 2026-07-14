@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Neil Graham | Fine Art Portraiture{% endblock %}
+{% block description %}A cinematic fine art portrait experience by Neil Graham, crafted slowly and intentionally for legacy artwork.{% endblock %}
+
+{% block content %}
+<section class="hero-split">
+  <span class="outline-word">Artistry</span>
+  <div class="section-inner hero-grid">
+    <div class="hero-text reveal visible">
+      <p class="eyebrow">Established in Stillness</p>
+      <h1>Legacy in Every <em>Frame</em></h1>
+      <p class="hero-copy">Bespoke portraiture that transcends the temporary. An unhurried experience, captured with intention and crafted for generations.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#portraits">View the Portfolio</a>
+        <a class="btn btn-quiet" href="{% url 'booking' %}">Book Your Inquiry Call</a>
+      </div>
+    </div>
+    <div class="hero-photo reveal visible">
+      <img src="{% static 'images/bundle/asset08-9383814c.jpg' %}" alt="Fine art portrait in cinematic studio light">
+    </div>
+  </div>
+  <div class="scroll-note" aria-hidden="true">Scroll</div>
+</section>
+
+<section class="page-section" id="about">
+  <div class="section-inner split reveal">
+    <div class="portrait-frame">
+      <img src="{% static 'images/bundle/g2-5b2ee162.jpg' %}" alt="Portrait session artwork">
+    </div>
+    <div class="copy-stack">
+      <p class="eyebrow">The Philosophy</p>
+      <h2>The Art of <em>Slow</em> Photography</h2>
+      <p>In an age of instant gratification, the experience is deliberate. Sessions are not rushed appointments; they are curated, quiet, and designed to peel back the layers of the everyday.</p>
+      <p>Neil invites clients into stillness. Between the clicks of the shutter, the portrait begins to hold the quiet weight of legacy.</p>
+      <blockquote class="pull-quote">The print is the performance; the digital file is only the score.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="page-section story-section">
+  <div class="section-inner split reverse reveal">
+    <div class="copy-stack">
+      <p class="eyebrow">Printed to Last</p>
+      <h2>Artwork you can hold, frame, and hand down.</h2>
+      <p>In a world of fleeting pixels, the physical print remains the clearest expression of the portrait. It becomes history you can live with: tangible, archival, and designed to outlast the devices that display it.</p>
+    </div>
+    <div class="image-panel">
+      <img src="{% static 'images/bundle/asset01-85025364.jpg' %}" alt="Printed portrait artwork detail">
+    </div>
+  </div>
+</section>
+
+<section class="page-section" id="portraits">
+  <div class="section-inner section-heading reveal">
+    <p class="eyebrow">Galleries</p>
+    <h2>Selected Works</h2>
+    <p class="section-kicker">Exploring identity through cinematic lighting and timeless composition.</p>
+  </div>
+  <div class="works reveal">
+    <article class="work-item">
+      <div class="frame">
+        <img src="{% static 'images/bundle/g6-02b6505a.jpg' %}" alt="Legacy portrait">
+      </div>
+      <h3>Legacy</h3>
+      <p>Generational Portraits</p>
+    </article>
+    <article class="work-item up">
+      <div class="frame">
+        <img src="{% static 'images/bundle/g8-596f348c.jpg' %}" alt="Cinematic headshot">
+      </div>
+      <h3>Identity</h3>
+      <p>Cinematic Headshots</p>
+    </article>
+    <article class="work-item down">
+      <div class="frame">
+        <img src="{% static 'images/bundle/g4-77be67e8.jpg' %}" alt="Celebration of life portrait">
+      </div>
+      <h3>Milestones</h3>
+      <p>Celebration of Life</p>
+    </article>
+  </div>
+</section>
+
+<section class="page-section services-section" id="services">
+  <div class="section-inner section-heading reveal">
+    <p class="eyebrow">The Collections</p>
+    <h2>Crafted Experiences</h2>
+  </div>
+  <div class="section-inner svc-list reveal">
+    <article class="svc-row" id="legacy">
+      <span class="num">01</span>
+      <div>
+        <h3>Legacy</h3>
+        <p>Generational portraiture for families who want a defining image to anchor the years to come.</p>
+      </div>
+      <span class="tag">Signature</span>
+    </article>
+    <article class="svc-row" id="celebration">
+      <span class="num">02</span>
+      <div>
+        <h3>Celebration of Life</h3>
+        <p>Tender, dignified remembrance sessions that honor a life and gather a family in stillness.</p>
+      </div>
+      <span class="tag">By Invitation</span>
+    </article>
+    <article class="svc-row" id="headshots">
+      <span class="num">03</span>
+      <div>
+        <h3>Headshots</h3>
+        <p>Cinematic identity portraits for people whose face is part of their work: refined, never corporate.</p>
+      </div>
+      <span class="tag">Studio</span>
+    </article>
+    <article class="svc-row" id="dogs">
+      <span class="num">04</span>
+      <div>
+        <h3>Dogs</h3>
+        <p>The most loyal members of the family, photographed with the same patience and light as any portrait.</p>
+      </div>
+      <span class="tag">Companion</span>
+    </article>
+  </div>
+</section>
+
+<section class="testimonial-band reveal">
+  <div class="section-inner narrow">
+    <p class="stars" aria-label="Five star review">★★★★★</p>
+    <blockquote>Neil has a way of seeing the soul that few others possess. The final portrait is truly a legacy piece our family will treasure for generations.</blockquote>
+    <cite>Eleanor V. · Five Stars</cite>
+  </div>
+</section>
+
+<section class="page-section journal-preview" id="journal">
+  <div class="section-inner split reveal">
+    <div class="copy-stack">
+      <p class="eyebrow">The Studio Journal</p>
+      <h2>Stories, session notes, and ideas for preserving legacy.</h2>
+    </div>
+    <article class="journal-card">
+      <p>Featured Entry</p>
+      <h3>Why printed portraits still matter in a digital world.</h3>
+      <a href="#">Read the Journal</a>
+    </article>
+  </div>
+</section>
+
+<section class="page-section model-calls" id="model-calls">
+  <div class="section-inner narrow reveal">
+    <p class="eyebrow">Model Calls</p>
+    <h2>Occasional creative sessions for new portrait concepts.</h2>
+    <p>When Neil is testing a new lighting style, artwork concept, or campaign, selected model calls will appear here.</p>
+  </div>
+</section>
+
+<section class="page-section final-cta">
+  <span class="outline-word">Legacy</span>
+  <div class="section-inner narrow reveal">
+    <p class="eyebrow">By Appointment Only</p>
+    <h2>Begin your <em>legacy</em> session.</h2>
+    <p>Start with a quiet inquiry call and decide whether the experience is the right fit.</p>
+    <a class="btn btn-primary" href="{% url 'booking' %}">Book Your Inquiry Call</a>
+  </div>
+</section>
+{% endblock %}

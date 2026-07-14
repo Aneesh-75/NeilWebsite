@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Portrait Services | Neil Graham{% endblock %}
+{% block description %}Explore Neil Graham's portrait services, including legacy portraits, celebration of life sessions, headshots, and dog portraits.{% endblock %}
+
+{% block content %}
+<section class="page-section services-section flush-top">
+  <div class="section-inner section-heading reveal visible">
+    <p class="eyebrow">Services</p>
+    <h1>Choose the portrait experience that fits the story.</h1>
+  </div>
+  <div class="section-inner svc-list reveal visible">
+    <a class="svc-row" href="{% url 'service_detail' 'legacy' %}">
+      <span class="num">01</span>
+      <div><h3>Legacy</h3><p>Fine art portraits designed for personal history, family memory, and heirloom wall artwork.</p></div>
+      <span class="tag">Signature</span>
+    </a>
+    <a class="svc-row" href="{% url 'service_detail' 'celebration' %}">
+      <span class="num">02</span>
+      <div><h3>Celebration of Life</h3><p>Thoughtful sessions for honoring a life chapter with dignity, warmth, and intention.</p></div>
+      <span class="tag">By Invitation</span>
+    </a>
+    <a class="svc-row" href="{% url 'service_detail' 'headshots' %}">
+      <span class="num">03</span>
+      <div><h3>Headshots</h3><p>Professional portraits with refined lighting and presence, made for people who want polish without stiffness.</p></div>
+      <span class="tag">Studio</span>
+    </a>
+    <a class="svc-row" href="{% url 'service_detail' 'dogs' %}">
+      <span class="num">04</span>
+      <div><h3>Dogs</h3><p>Artful companion portraits that preserve personality, expression, and the bond clients never want to lose.</p></div>
+      <span class="tag">Companion</span>
+    </a>
+  </div>
+</section>
+{% endblock %}

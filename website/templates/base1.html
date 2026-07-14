@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Neil Graham Portrait Photography{% endblock %}</title>
+  <meta name="description" content="{% block description %}Fine art portrait experiences by Neil Graham in Waterford, Ontario.{% endblock %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="{% url 'home' %}" aria-label="Neil Graham home">
+      <span class="brand-mark" aria-hidden="true">
+        <span></span>
+      </span>
+      <span class="brand-copy">
+        <span>Neil Graham</span>
+        <span>Portrait Photographer</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary navigation">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'home' %}#about">About</a>
+      <a href="{% url 'home' %}#portraits">Portraits</a>
+      <div class="nav-group">
+        <a href="{% url 'home' %}#services">Services</a>
+        <div class="nav-menu" aria-label="Services submenu">
+          <a href="{% url 'home' %}#legacy">Legacy</a>
+          <a href="{% url 'home' %}#celebration">Celebration of Life</a>
+          <a href="{% url 'home' %}#headshots">Headshots</a>
+          <a href="{% url 'home' %}#dogs">Dogs</a>
+        </div>
+      </div>
+      <a href="{% url 'home' %}#journal">The Studio Journal</a>
+      <a href="{% url 'home' %}#model-calls">Model Calls</a>
+    </nav>
+
+    <a class="header-cta" href="{% url 'booking' %}">Book Your Inquiry Call</a>
+  </header>
+
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="brand footer-brand" href="{% url 'home' %}" aria-label="Neil Graham home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span class="brand-copy">
+          <span>Neil Graham</span>
+          <span>Portrait Photographer</span>
+        </span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="{% url 'home' %}#about">About</a>
+        <a href="{% url 'home' %}#portraits">Portraits</a>
+        <a href="{% url 'home' %}#services">Services</a>
+        <a href="{% url 'home' %}#journal">Journal</a>
+        <a href="{% url 'booking' %}">Book</a>
+      </nav>
+      <p>Waterford, Ontario fine art portrait experiences</p>
+      <p class="footer-copy">© 2026 Neil Graham Portrait Photography. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

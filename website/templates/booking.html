@@ -7,8 +7,9 @@
 {% block content %}
 <section class="booking-hero flush-top">
   <div class="booking-bg">
-    <img src="{% static 'images/neil_studio.jpg' %}" alt="Warm studio atmosphere">
+    <img src="{% static 'images/portfolio/aimee-bokeh.jpg' %}" alt="Atmospheric fine art portrait">
   </div>
+  <span class="outline-word" aria-hidden="true">Begin</span>
   <div class="section-inner booking-layout">
     <div class="booking-intro reveal">
       <p class="eyebrow">Complimentary Consultation</p>
@@ -21,16 +22,63 @@
       </ul>
     </div>
 
-    <aside class="booking-panel reveal" id="calendar" aria-label="Booking calendar">
-      <p class="eyebrow">Choose Your Time</p>
-      <h2>Select a time that works for you.</h2>
-      <div class="calendar-box">
-        <div>
-          <h3>Calendar Embed</h3>
-          <p>Paste Neil's Calendly, Cal.com, or Google appointment embed here. This panel is intentionally at the top of the page so the booking action is immediately visible.</p>
-          <a class="btn btn-primary" href="mailto:neilgrahamphotography@gmail.com?subject=Portrait%20Inquiry%20Call">Email Neil For Now</a>
+    <aside class="booking-panel reveal" id="calendar" aria-label="Booking inquiry form">
+      <p class="eyebrow">Request Your Call</p>
+      <h2>Tell Neil a little about you.</h2>
+
+      {% if messages %}
+        {% for message in messages %}
+          <div class="form-success" role="status">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+
+      <form class="inquiry-form" method="post" action="{% url 'booking' %}#calendar" novalidate>
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+          <div class="form-error">{{ form.non_field_errors }}</div>
+        {% endif %}
+
+        <div class="field">
+          <label for="{{ form.full_name.id_for_label }}">Full name</label>
+          {{ form.full_name }}
+          {% if form.full_name.errors %}<span class="field-error">{{ form.full_name.errors.0 }}</span>{% endif %}
         </div>
-      </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {{ form.email }}
+            {% if form.email.errors %}<span class="field-error">{{ form.email.errors.0 }}</span>{% endif %}
+          </div>
+          <div class="field">
+            <label for="{{ form.phone.id_for_label }}">Phone</label>
+            {{ form.phone }}
+            {% if form.phone.errors %}<span class="field-error">{{ form.phone.errors.0 }}</span>{% endif %}
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="{{ form.session_type.id_for_label }}">Session type</label>
+            {{ form.session_type }}
+            {% if form.session_type.errors %}<span class="field-error">{{ form.session_type.errors.0 }}</span>{% endif %}
+          </div>
+          <div class="field">
+            <label for="{{ form.preferred_date.id_for_label }}">Preferred date</label>
+            {{ form.preferred_date }}
+            {% if form.preferred_date.errors %}<span class="field-error">{{ form.preferred_date.errors.0 }}</span>{% endif %}
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="{{ form.message.id_for_label }}">Your vision</label>
+          {{ form.message }}
+          {% if form.message.errors %}<span class="field-error">{{ form.message.errors.0 }}</span>{% endif %}
+        </div>
+
+        <button class="btn btn-primary" type="submit">Send Inquiry</button>
+        <p class="form-note">A complimentary 20-minute call — no pressure to book.</p>
+      </form>
     </aside>
   </div>
 </section>
@@ -48,11 +96,12 @@
     <div class="copy-stack">
       <p class="eyebrow">The Beginning</p>
       <h2>The call is not about rushing a booking. It is about shaping the right experience.</h2>
-    </div>
-    <div class="copy-stack">
       <p>If you decide to move forward, Neil will guide the details: styling, mood, session pacing, and the finished artwork you want to create.</p>
       <p>This is where the portrait experience begins.</p>
       <a class="btn btn-quiet" href="{% url 'home' %}">Return Home</a>
+    </div>
+    <div class="portrait-frame">
+      <img src="{% static 'images/portfolio/legacy-erin.jpg' %}" alt="Legacy portrait by Neil Graham">
     </div>
   </div>
 </section>

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Portrait Portfolio | Neil Graham{% endblock %}
+{% block description %}Selected fine art portrait work by Neil Graham, including legacy, headshot, character, and companion portraits.{% endblock %}
+
+{% block content %}
+<section class="page-section flush-top" id="portraits">
+  <div class="section-inner section-heading reveal visible">
+    <p class="eyebrow">Selected Work</p>
+    <h1>Portraits that feel cinematic, emotional, and permanent.</h1>
+  </div>
+  <div class="works reveal visible">
+    <div class="work-item">
+      <div class="frame"><img src="{% static 'images/portfolio/legacy-erin.jpg' %}" alt="Legacy portrait with refined studio lighting"></div>
+      <h3>Legacy</h3>
+      <p>Generational Portraits</p>
+    </div>
+    <div class="work-item up">
+      <div class="frame"><img src="{% static 'images/portfolio/identity-lauren-green.jpg' %}" alt="Editorial fine art identity portrait"></div>
+      <h3>Identity</h3>
+      <p>Cinematic Portraiture</p>
+    </div>
+    <div class="work-item down">
+      <div class="frame"><img src="{% static 'images/portfolio/celebration-hannah-red.jpg' %}" alt="Hollywood inspired milestone portrait"></div>
+      <h3>Milestones</h3>
+      <p>Celebration of Life</p>
+    </div>
+  </div>
+  <div class="gallery-grid reveal">
+    <figure class="gallery-item gallery-large">
+      <img src="{% static 'images/portfolio/aimee-bokeh.jpg' %}" alt="Glamour fine art portrait with warm bokeh">
+      <figcaption>Fine Art</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="{% static 'images/portfolio/headshot-greg.jpg' %}" alt="Cinematic headshot portrait">
+      <figcaption>Headshots</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="{% static 'images/portfolio/celebration-hannah-red.jpg' %}" alt="Hollywood inspired milestone portrait">
+      <figcaption>Milestones</figcaption>
+    </figure>
+    <figure class="gallery-item gallery-wide">
+      <img src="{% static 'images/portfolio/hero-rainbow-legacy.jpg' %}" alt="Conceptual fine art portrait with rainbow fabric">
+      <figcaption>Conceptual</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="{% static 'images/portfolio/piper-fairy.jpg' %}" alt="Child portrait with fairy styling">
+      <figcaption>Children</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="{% static 'images/portfolio/dog-dutchess.jpg' %}" alt="Companion dog portrait">
+      <figcaption>Companions</figcaption>
+    </figure>
+    <figure class="gallery-item gallery-wide">
+      <img src="{% static 'images/portfolio/hannah-hollywood.jpg' %}" alt="Hollywood inspired portrait in a red gown">
+      <figcaption>Portraiture</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="{% static 'images/portfolio/identity-lauren-green.jpg' %}" alt="Editorial identity portrait in green suit">
+      <figcaption>Editorial</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="{% static 'images/portfolio/phoebe-crown.jpg' %}" alt="Fine art dog portrait wearing a crown">
+      <figcaption>Companions</figcaption>
+    </figure>
+    <figure class="gallery-item gallery-wide">
+      <img src="{% static 'images/portfolio/hero-rainbow-legacy.jpg' %}" alt="Conceptual fine art portrait with rainbow fabric">
+      <figcaption>Glamour</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="{% static 'images/portfolio/business-headshot.jpg' %}" alt="Business headshot portrait">
+      <figcaption>Professional</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="{% static 'images/portfolio/joyful-portrait.jpg' %}" alt="Joyful seated portrait">
+      <figcaption>Personal</figcaption>
+    </figure>
+  </div>
+</section>
+{% endblock %}

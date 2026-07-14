@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Neil Graham | Fine Art Portrait Photography{% endblock %}
+{% block description %}Learn about Neil Graham's calm, intentional fine art portrait experience in Waterford, Ontario.{% endblock %}
+
+{% block content %}
+<section class="page-section flush-top">
+  <div class="section-inner split about-split reveal visible">
+    <div class="portrait-frame">
+      <img src="{% static 'images/portfolio/neil-selfportrait.jpg' %}" alt="Portrait of Neil Graham">
+    </div>
+    <div class="copy-stack">
+      <p class="eyebrow">The Artist Behind the Portraits</p>
+      <h1>Not just a photo session. A calm, intentional portrait day.</h1>
+      <p>Neil Graham creates fine art portrait experiences for people who want more than digital files. The process is built around conversation, relaxed direction, and finished artwork that feels worthy of being displayed.</p>
+      <p>From the first inquiry call to the final reveal, the goal is to make clients feel cared for, unhurried, and proud of the legacy they are preserving.</p>
+      <blockquote class="pull-quote">Telling your story through timeless legacy portraits.</blockquote>
+      <a class="btn btn-primary" href="{% url 'booking' %}">Book Your Inquiry Call</a>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial-band reveal">
+  <div class="section-inner narrow">
+    <p class="stars" aria-label="Five star review">★★★★★</p>
+    <blockquote>Working with Neil was unlike anything I expected. The entire experience felt relaxed and elevated, and the portraits are now the artwork I am proudest to have in my home.</blockquote>
+    <cite>Sarah M. · Google Review</cite>
+  </div>
+</section>
+{% endblock %}

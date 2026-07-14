@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}The Studio Journal | Neil Graham{% endblock %}
+{% block description %}Stories, session notes, and ideas for preserving legacy through printed portraits and finished artwork.{% endblock %}
+
+{% block content %}
+<section class="page-section journal-preview flush-top">
+  <div class="section-inner split reveal visible">
+    <div class="copy-stack">
+      <p class="eyebrow">The Studio Journal</p>
+      <h1>Stories, session notes, and ideas for preserving legacy.</h1>
+      <p>Journal entries can live here as separate posts as the studio adds session stories, artwork guidance, and portrait planning notes.</p>
+    </div>
+    <article class="journal-card">
+      <p>Featured Entry</p>
+      <h3>Why printed portraits still matter in a digital world.</h3>
+      <a href="{% url 'booking' %}">Start With A Call</a>
+    </article>
+  </div>
+</section>
+{% endblock %}

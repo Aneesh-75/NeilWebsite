@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ service.title }} Portraits | Neil Graham{% endblock %}
+{% block description %}{{ service.intro }}{% endblock %}
+
+{% block content %}
+<section class="page-section flush-top">
+  <div class="section-inner split reveal visible">
+    <div class="copy-stack">
+      <p class="eyebrow">{{ service.tag }}</p>
+      <h1>{{ service.title }}</h1>
+      <p>{{ service.intro }}</p>
+      {% for paragraph in service.body %}
+        <p>{{ paragraph }}</p>
+      {% endfor %}
+      <a class="btn btn-primary" href="{% url 'booking' %}">Book Your Inquiry Call</a>
+      <a class="btn btn-quiet" href="{% url 'services' %}">All Services</a>
+    </div>
+    <div class="portrait-frame">
+      <img src="{% static service.image %}" alt="{{ service.alt }}">
+    </div>
+  </div>
+</section>
+{% endblock %}
