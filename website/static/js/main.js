@@ -1,3 +1,40 @@
+const introOverlay = document.querySelector("[data-intro-overlay]");
+
+if (introOverlay) {
+  const introVideo = introOverlay.querySelector("video");
+  const introSkip = introOverlay.querySelector("[data-intro-skip]");
+  const alreadyPlayed = sessionStorage.getItem("introPlayed");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const dismissIntro = () => {
+    introOverlay.classList.add("is-hidden");
+    document.body.classList.remove("intro-active");
+    sessionStorage.setItem("introPlayed", "1");
+    window.setTimeout(() => introOverlay.remove(), 700);
+  };
+
+  if (alreadyPlayed || reducedMotion || !introVideo) {
+    introOverlay.remove();
+  } else {
+    document.body.classList.add("intro-active");
+    introVideo.addEventListener("ended", dismissIntro);
+    introOverlay.addEventListener(
+      "touchmove",
+      (event) => event.preventDefault(),
+      { passive: false }
+    );
+    if (introSkip) {
+      introSkip.addEventListener("click", dismissIntro);
+    }
+    const playPromise = introVideo.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(dismissIntro);
+    }
+    // Safety net in case the video stalls or metadata is wrong.
+    window.setTimeout(dismissIntro, 15000);
+  }
+}
+
 const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const siteNav = document.querySelector("[data-site-nav]");

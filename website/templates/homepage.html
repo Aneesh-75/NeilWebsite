@@ -4,6 +4,17 @@
 {% block title %}Neil Graham | Fine Art Portrait Experiences{% endblock %}
 
 {% block content %}
+<div class="intro-overlay" data-intro-overlay>
+  <video
+    src="{% static 'videos/logo-spin-intro.mp4' %}"
+    autoplay
+    muted
+    playsinline
+    preload="auto"
+  ></video>
+  <button type="button" class="intro-skip" data-intro-skip>Skip</button>
+</div>
+
 <section class="hero-split flush-top">
   <span class="outline-word" aria-hidden="true">Artistry</span>
   <div class="section-inner">
